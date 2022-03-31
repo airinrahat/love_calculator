@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img src="https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Hearts-PNG/Pink_Heart_PNG_Transparent_Clipart.png?m=1612953486" alt="">
+            <!-- <img src="https://p.kindpng.com/picc/s/114-1146835_d-transparent-png-pink-heart-png-3d-png.png" alt=""> -->
+            <h1>Love Calculator</h1>
+            <div class="inputarea">
+                <input type="text" placeholder="Your Name" id="NameOne" onfocus="this.value = ''">
+                <input type="text" placeholder="Your Partner Name" id="NameTwo" onfocus="this.value = ''">
+               
+            </div>
+            <a href="#" onclick="love()">Calculator</a>
+            <p id="print">Your relationship result here</p>
+            <p id="satement"></p>
+        </div>
+    </div>
+    <script>
+        function love(){
+
+        var nam1 = document.getElementById("NameOne").value;
+        var nam2 = document.getElementById("NameTwo").value;
+        if(nam1.length<=2){
+            alert("Enter at least 3 charactar");
+        }
+        if(nam2.length<=2){
+            alert("Enter at least 3 charactar");
+        }
+        else{
+            var random = Math.floor(Math.random()*100);
+            document.getElementById("print").innerHTML = nam1 + " and " + nam2 + "=" +random+ "%" + "of love";
+        }
+        if(random<=10 || random<=50){
+            document.getElementById("satement").innerHTML = "Good Relationship";
+        }
+        else if(random<=51 || random<=100){
+            document.getElementById("satement").innerHTML = "Lovly Relationship";
+        }
+    }
+
+    </script>
+</body>
+</html>
